@@ -30,6 +30,8 @@ public class GestionnaireEvents extends ListenerAdapter {
      * 
      * Execute la commande choisi par l'utilisateur, s'il en a fait la demande
      * 
+     * @param event {@code MessageReceivedEvent} Recéption du message d'un serveur discord
+     * 
      * @see GestionnaireEvents#botEstAppeleParUtilisateur(MessageReceivedEvent)
      * @see Commande#execute(net.dv8tion.jda.api.entities.Message)
      * @see RepertoireCommandes#getCommande(MessageReceivedEvent)
@@ -45,7 +47,9 @@ public class GestionnaireEvents extends ListenerAdapter {
 
     /**
      * Retourne vrai, si le premier caractère du message correspond à la désignation
-     * du bot.
+     * du bot et s'il n'est l'utilisateur qui envoie le message n'est pas un bot.
+     * 
+     * @param event {@code MessageReceivedEvent} message reçue par un serveur discord
      * 
      * @return {@code boolean}
      * 
@@ -55,5 +59,6 @@ public class GestionnaireEvents extends ListenerAdapter {
     private boolean botEstAppeleParUtilisateur(MessageReceivedEvent event) {
         return !event.getAuthor().isBot() && event.getMessage().getContentRaw().charAt(0) == DESIGNATION_BOT;
     }
+
 
 }
