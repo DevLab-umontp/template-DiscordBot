@@ -38,26 +38,31 @@ public class RepertoireCommandes {
 
     /**
      * 
-     * Retourne la commande associée au mot clef contenue dans le message
+     * Retourne la commande associée au premier mot contenue dans le message
      * 
-     * @param motClef
+     * @param msg {@code  MessageReceivedEvent} message reçue du serveur
+     * 
      * @return {@code Commande} 
      * @see java.util.HashMap#get(java.lang.Object)
+     * @see RepertoireCommandes#getPremierMotDuMessage(MessageReceivedEvent)
      */
     public static Commande getCommande(MessageReceivedEvent msg) {
-        String motClef = getMotClefDansMessage(msg);
+        String motClef = getPremierMotDuMessage(msg);
         return REPERTOIRE_COMMANDES.get(motClef);
     }
 
 
     /**
-     * Retourne le mot clef du message.
+     * Retourne le premier mot contenue dans le message reçue du serveur
      * 
-     * @return {@code String}.
+     * @param msg {@code MessageReceivedEvent} Message reçue du serveur
      * 
-     * @see String
+     * @return {@code String} premier mot du message
+     * 
+     * @see MessageReceivedEvent#getMessage()
+     * @see net.dv8tion.jda.api.entities.Message#getContentRaw()
      */
-    private static String getMotClefDansMessage(MessageReceivedEvent msg) {
+    private static String getPremierMotDuMessage(MessageReceivedEvent msg) {
         return msg.getMessage().getContentRaw().substring(1).split(" ")[0].toLowerCase();
     }
 
