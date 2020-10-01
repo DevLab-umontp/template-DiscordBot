@@ -32,7 +32,7 @@ public class App {
         } catch (javax.security.auth.login.LoginException e) {
             System.err.println("Un problème est survenue lors de la connexion.\n Veuillez récrire le token :");
             corrigerToken(builder);
-            e.printStackTrace();
+            login(builder);
         }
     }
 
@@ -40,6 +40,5 @@ public class App {
         Scanner in = new Scanner(System.in);
         builder.setToken(in.next());
         in.close();
-        login(builder);
     }
 }

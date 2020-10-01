@@ -10,11 +10,11 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
  * <p>
  * Elle est caractérisée par :
  * <ul>
- * <li>Une HashMap qui relie le mot clé à la commande executé</li>
+ * <li>Une {@code HashMap} qui associe un mot {@code String} à une {@code Commande}</li>
  * </ul>
  * </p>
  * <p>
- *  Le repertoire est automatiquement initialisé en static. 
+ *  A noter que {@link #REPERTOIRE_DES_COMMANDES} est automatiquement initialisé en static. 
  * </p>
  * 
  * @see HashMap
@@ -30,34 +30,41 @@ public class RepertoireCommandes {
      * @see HashMap
      * @see Commande
      */
-    private static final HashMap<String, Commande> REPERTOIRE_COMMANDES = new HashMap<>();
+    private static final HashMap<String, Commande> REPERTOIRE_DES_COMMANDES = new HashMap<>();
 
     static {
-        REPERTOIRE_COMMANDES.put("help", new Help());
+        REPERTOIRE_DES_COMMANDES.put("help", new Help());
     }
 
     /**
      * 
-     * Retourne la commande associée au mot clef contenue dans le message
+     * Retourne la commande associée au premier mot contenue dans le message
      * 
-     * @param motClef
+     * @param msg {@code  MessageReceivedEvent} message reçue par un serveur Discord
+     * 
      * @return {@code Commande} 
+     * 
+     * @see RepertoireCommandes#REPERTOIRE_DES_COMMANDES
      * @see java.util.HashMap#get(java.lang.Object)
+     * @see RepertoireCommandes#getPremierMotDuMessage(MessageReceivedEvent)
      */
     public static Commande getCommande(MessageReceivedEvent msg) {
-        String motClef = getMotClefDansMessage(msg);
-        return REPERTOIRE_COMMANDES.get(motClef);
+        String motClef = getPremierMotDuMessage(msg);
+        return REPERTOIRE_DES_COMMANDES.get(motClef);
     }
 
 
     /**
-     * Retourne le mot clef du message.
+     * Retourne le premier mot contenue dans le message reçue du serveur
      * 
-     * @return {@code String}.
+     * @param msg {@code MessageReceivedEvent} Message reçue du serveur
      * 
-     * @see String
+     * @return {@code String} premier mot du message
+     * 
+     * @see MessageReceivedEvent#getMessage()
+     * @see net.dv8tion.jda.api.entities.Message#getContentRaw()
      */
-    private static String getMotClefDansMessage(MessageReceivedEvent msg) {
+    private static String getPremierMotDuMessage(MessageReceivedEvent msg) {
         return msg.getMessage().getContentRaw().substring(1).split(" ")[0].toLowerCase();
     }
 
