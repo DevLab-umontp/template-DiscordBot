@@ -14,7 +14,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
  * </ul>
  * </p>
  * <p>
- *  A noter que {@link #REPERTOIRE_DES_COMMANDES} est automatiquement initialisé en static. 
+ *  À noter que {@link #REPERTOIRE_DES_COMMANDES} est automatiquement initialisé en static. 
  * </p>
  * 
  * @see HashMap
@@ -25,7 +25,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 public class RepertoireCommandes {
 
     /**
-     * Répertoire des commandes. Cet repertoire relie le mot clé à une commande.
+     * Répertoire des commandes. Ce répertoire relie un mot-clé à une commande.
      * 
      * @see HashMap
      * @see Commande
@@ -37,7 +37,6 @@ public class RepertoireCommandes {
     }
 
     /**
-     * 
      * Retourne la commande associée au premier mot contenue dans le message
      * 
      * @param msg {@code  MessageReceivedEvent} message reçue par un serveur Discord
@@ -55,11 +54,11 @@ public class RepertoireCommandes {
 
 
     /**
-     * Retourne le premier mot contenue dans le message reçue du serveur
+     * Retourne le premier mot contenu dans le message reçu du serveur
      * 
-     * @param msg {@code MessageReceivedEvent} Message reçue du serveur
+     * @param msg {@code MessageReceivedEvent} Message reçu du serveur
      * 
-     * @return {@code String} premier mot du message
+     * @return {@code String} Premier mot du message
      * 
      * @see MessageReceivedEvent#getMessage()
      * @see net.dv8tion.jda.api.entities.Message#getContentRaw()
