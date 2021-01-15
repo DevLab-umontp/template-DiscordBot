@@ -5,10 +5,13 @@ import java.util.Scanner;
 import net.dv8tion.jda.api.*;
 import net.dv8tion.jda.api.utils.Compression;
 
+/**
+ * <b>App est la classe qui permet d'exécuter le bot.</b>
+ * 
+ * @version 1.0
+ */
 public class App {
-    /**
-     *
-     */
+
     private static final JDABuilder DISCORD_BOT_BUILDER = new JDABuilder(AccountType.BOT)
             .addEventListeners(new GestionnaireEvents())
             .setCompression(Compression.NONE);

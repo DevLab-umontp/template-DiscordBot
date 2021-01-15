@@ -9,10 +9,10 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
  * bot.</b>
  * <p>
  * Elle est caractérisée par :
+ * </p>
  * <ul>
  * <li>Une {@code HashMap} qui associe un mot {@code String} à une {@code Commande}</li>
  * </ul>
- * </p>
  * <p>
  *  À noter que {@link #REPERTOIRE_DES_COMMANDES} est automatiquement initialisé en static. 
  * </p>
