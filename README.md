@@ -1,3 +1,5 @@
+![GitHub Actions](https://github.com/DevLab-umontp/template-DiscordBot/workflows/Java%20CI%20with%20Maven/badge.svg)
+[![JavaDoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://mathieusoysal.github.io/stats/template-discordbot)
 # ![](ressources/devicon.png) Template Discord Bot
 Créer votre propre bot Discord en quelques clics en récupérant le template !
 
