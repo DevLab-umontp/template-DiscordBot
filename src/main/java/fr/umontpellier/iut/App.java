@@ -5,17 +5,20 @@ import java.util.Scanner;
 import net.dv8tion.jda.api.*;
 import net.dv8tion.jda.api.utils.Compression;
 
+/**
+ * <b>App est la classe qui permet d'exécuter le bot.</b>
+ * 
+ * @version 1.0
+ */
 public class App {
-    /**
-     *
-     */
-    private static final JDABuilder ANIMAGUS_BUILDER = new JDABuilder(AccountType.BOT)
+
+    private static final JDABuilder DISCORD_BOT_BUILDER = new JDABuilder(AccountType.BOT)
             .addEventListeners(new GestionnaireEvents())
             .setCompression(Compression.NONE);
 
     public static void main(String[] args) {
         verifieArguments(args);
-        JDABuilder builder = ANIMAGUS_BUILDER.setToken(args[0]);
+        JDABuilder builder = DISCORD_BOT_BUILDER.setToken(args[0]);
         login(builder);
     }
 
@@ -30,7 +33,7 @@ public class App {
             for (int i = 0; i < 10; i++)
                 builder.useSharding(i, 10).build();
         } catch (javax.security.auth.login.LoginException e) {
-            System.err.println("Un problème est survenue lors de la connexion.\n Veuillez récrire le token :");
+            System.err.println("Un problème est survenu lors de la connexion.\n Veuillez récrire le token :");
             corrigerToken(builder);
             login(builder);
         }

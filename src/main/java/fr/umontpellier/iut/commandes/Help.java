@@ -9,10 +9,18 @@ import net.dv8tion.jda.api.entities.Message;
  * 
  * @version 1.0
  */
+
+/**
+ * <b>Help est la classe représentant une commande "help" du bot Discord.</b>
+ * 
+ * @see Commande
+ * 
+ * @version 1.0
+ */
 public class Help implements Commande {
 
     /**
-     * Envoi un message dans le channel où le message a été reçue.
+     * Envoie un message dans le channel où le message a été reçu.
      * 
      * @param messageRecue {@code Message}
      * 

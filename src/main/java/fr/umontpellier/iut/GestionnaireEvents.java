@@ -17,7 +17,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class GestionnaireEvents extends ListenerAdapter {
 
     /**
-     * La designation du bot. Cet variable répsente le caractère qui permet
+     * La désignation du bot. Cette variable représente le caractère qui permet
      * d'appeler le bot.
      * 
      * Exemple : !help Pour déclancher la commande help du bot.
@@ -27,10 +27,10 @@ public class GestionnaireEvents extends ListenerAdapter {
     private static final char DESIGNATION_BOT = '!';
 
     /**
+     * Exécute la commande choisie par l'utilisateur, s'il en a fait la demande.
      * 
-     * Execute la commande choisi par l'utilisateur, s'il en a fait la demande
-     * 
-     * @param event {@code MessageReceivedEvent} Recéption du message d'un serveur discord
+     * @param event {@code MessageReceivedEvent} Recéption du message d'un serveur
+     *              discord
      * 
      * @see GestionnaireEvents#botEstAppeleParUtilisateur(MessageReceivedEvent)
      * @see Commande#execute(net.dv8tion.jda.api.entities.Message)
@@ -49,7 +49,8 @@ public class GestionnaireEvents extends ListenerAdapter {
      * Retourne vrai, si le premier caractère du message correspond à la désignation
      * du bot et s'il n'est l'utilisateur qui envoie le message n'est pas un bot.
      * 
-     * @param event {@code MessageReceivedEvent} message reçue par un serveur discord
+     * @param event {@code MessageReceivedEvent} message reçue par un serveur
+     *              discord
      * 
      * @return {@code boolean}
      * 
@@ -59,6 +60,5 @@ public class GestionnaireEvents extends ListenerAdapter {
     private boolean botEstAppeleParUtilisateur(MessageReceivedEvent event) {
         return !event.getAuthor().isBot() && event.getMessage().getContentRaw().charAt(0) == DESIGNATION_BOT;
     }
-
 
 }
