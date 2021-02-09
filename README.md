@@ -51,7 +51,7 @@ Pour cela rendez-vous dans le fichier *RepertoireCommandes.java* et ajoutez à l
 ```
 
 ### Finiis
-Et voilà le résult : 
+Et voilà le résult, une fois le bot [lancé](https://github.com/DevLab-umontp/template-DiscordBot/#commande-%C3%A0-effectuer-pour-lancer-le-bot-) : 
 
 ![image](https://user-images.githubusercontent.com/43273304/107413672-4c151c00-6b11-11eb-98f4-e8e4ada5452a.png)
 
