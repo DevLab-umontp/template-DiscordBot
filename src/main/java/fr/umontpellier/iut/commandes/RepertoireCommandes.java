@@ -70,7 +70,7 @@ public class RepertoireCommandes {
     }
 
     private RepertoireCommandes() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException("Class utilitaire");
     }
 
 }

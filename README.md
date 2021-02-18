@@ -45,9 +45,9 @@ public class Ping implements Commande {
 
 Dans notre cas nous voulons que notre bot lance la commande lorsqu'il reçois le message "ping".
 
-Pour cela rendez-vous dans le fichier *RepertoireCommandes.java* et ajoutez à la ligne 36 le code suivant : 
+Pour cela rendez-vous dans le fichier *RepertoireCommandes.java* et ajoutez à la *ligne 39* le code suivant : 
 ```java
-        REPERTOIRE_DES_COMMANDES.put("ping", new Ping());
+        entry("ping", new Ping()),
 ```
 
 ### Finiis
