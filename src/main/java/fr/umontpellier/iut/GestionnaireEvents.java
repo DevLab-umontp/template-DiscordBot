@@ -33,7 +33,7 @@ public class GestionnaireEvents extends ListenerAdapter {
      *              discord
      * 
      * @see GestionnaireEvents#botEstAppeleParUtilisateur(MessageReceivedEvent)
-     * @see Commande#execute(net.dv8tion.jda.api.entities.Message)
+     * @see Commande#executer(net.dv8tion.jda.api.entities.Message)
      * @see RepertoireCommandes#getCommande(MessageReceivedEvent)
      */
     @Override
@@ -41,7 +41,7 @@ public class GestionnaireEvents extends ListenerAdapter {
         if (botEstAppeleParUtilisateur(event)) {
             Commande cmd = RepertoireCommandes.getCommande(event);
             if (cmd != null)
-                cmd.execute(event.getMessage());
+                cmd.executer(event.getMessage());
         }
     }
 

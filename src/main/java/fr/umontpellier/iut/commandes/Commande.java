@@ -16,5 +16,5 @@ import net.dv8tion.jda.api.entities.Message;
  */
 public interface Commande {
 
-    public void execute(Message messageRecue);
+    public void executer(Message messageRecue);
 }

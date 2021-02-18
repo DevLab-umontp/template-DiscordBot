@@ -28,7 +28,7 @@ public class Help implements Commande {
      * @see net.dv8tion.jda.api.entities.MessageChannel#sendMessage(CharSequence)
      */
     @Override
-    public void execute(Message messageRecue) {
+    public void executer(Message messageRecue) {
         String reponse = " La demande d'aide a été entendue.";
         messageRecue.getChannel().sendMessage(reponse).queue();
     }

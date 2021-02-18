@@ -32,7 +32,7 @@ import net.dv8tion.jda.api.entities.Message;
 public class Ping implements Commande {
 
     @Override
-    public void execute(Message messageRecue) {
+    public void executer(Message messageRecue) {
         messageRecue.getChannel().sendMessage("pong!").queue();
     }
 
