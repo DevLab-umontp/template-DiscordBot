@@ -1,6 +1,9 @@
 package fr.umontpellier.iut.commandes;
 
+import static java.util.Map.entry;
+
 import java.util.HashMap;
+import java.util.Map;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -32,11 +35,9 @@ public class RepertoireCommandes {
      * @see HashMap
      * @see Commande
      */
-    private static final HashMap<String, Commande> REPERTOIRE_DES_COMMANDES = new HashMap<>();
-
-    static {
-        REPERTOIRE_DES_COMMANDES.put("help"/* Toujours mettre en minuscule */, new Help());
-    }
+    private static final Map<String, Commande> REPERTOIRE_DES_COMMANDES = Map.ofEntries(//
+            entry("help", new Help())//
+    );
 
     /**
      * Retourne la commande associée au premier mot contenue dans le message
