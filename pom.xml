@@ -68,6 +68,15 @@
     </profile>
   </profiles>
   <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>2.14.0</version>
+      <type>pom</type>
+    </dependency>
+
     <dependency>
       <!-- https://mvnrepository.com/artifact/net.dv8tion/JDA -->
       <groupId>net.dv8tion</groupId>

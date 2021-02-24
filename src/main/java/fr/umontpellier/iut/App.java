@@ -2,7 +2,11 @@ package fr.umontpellier.iut;
 
 import java.util.Scanner;
 
-import net.dv8tion.jda.api.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import net.dv8tion.jda.api.AccountType;
+import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.utils.Compression;
 
 /**
@@ -12,9 +16,10 @@ import net.dv8tion.jda.api.utils.Compression;
  */
 public class App {
 
+    private static final Logger LOG = LoggerFactory.getLogger(App.class);
+
     private static final JDABuilder DISCORD_BOT_BUILDER = new JDABuilder(AccountType.BOT)
-            .addEventListeners(new GestionnaireEvents())
-            .setCompression(Compression.NONE);
+            .addEventListeners(new GestionnaireEvents()).setCompression(Compression.NONE);
 
     public static void main(String[] args) {
         verifieArguments(args);
@@ -33,7 +38,7 @@ public class App {
             for (int i = 0; i < 10; i++)
                 builder.useSharding(i, 10).build();
         } catch (javax.security.auth.login.LoginException e) {
-            System.err.println("Un problème est survenu lors de la connexion.\n Veuillez récrire le token :");
+            LOG.error("Un problème est survenu lors de la connexion.\n Veuillez récrire le token :", e);
             corrigerToken(builder);
             login(builder);
         }
