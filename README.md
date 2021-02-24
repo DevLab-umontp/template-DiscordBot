@@ -18,9 +18,9 @@ Créer votre propre bot Discord en quelques clics en récupérant le template !
 ## Rapide tuto pour ajouter une commande au sein du bot
 Le but du tuto est d'ajouter une commande *ping* au sein du bot, qui devra renvoyer le message *"pong!"*.
 
-### Première étape créer la class Ping
+### Première étape créer la class `Ping`
 
-Rendez-vous dans le dossier qui se nomme *commandes* et créez-y le fichier Ping.java
+Rendez-vous dans le dossier qui se nomme *commandes* et créez-y le fichier `Ping.java`
 
 Au sein du fichier placez-y le code suivant : 
 
@@ -45,7 +45,7 @@ public class Ping implements Commande {
 
 Dans notre cas nous voulons que notre bot lance la commande lorsqu'il reçois le message "ping".
 
-Pour cela rendez-vous dans le fichier *RepertoireCommandes.java* et ajoutez à la *ligne 39* le code suivant : 
+Pour cela rendez-vous dans le fichier `RepertoireCommandes.java` et ajoutez à la *ligne 39* le code suivant : 
 ```java
         entry("ping", new Ping()),
 ```
