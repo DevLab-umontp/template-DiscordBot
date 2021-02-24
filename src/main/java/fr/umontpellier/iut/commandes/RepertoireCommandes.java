@@ -36,7 +36,7 @@ public class RepertoireCommandes {
      * @see Commande
      */
     private static final Map<String, Commande> REPERTOIRE_DES_COMMANDES = Map.ofEntries(//
-            entry("help", new Help())//
+            entry("help", new Help())// Attention le string doit toujours être en minuscule
     );
 
     /**
